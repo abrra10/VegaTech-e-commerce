@@ -100,7 +100,7 @@ const Products = () => {
       </div>
 
       {/* Right Content */}
-      <div className="flex-3 sm:mt-8">
+      <div className="flex-3 sm:pt-8 md:pt-12">
         <List
           catId={catId}
           maxPrice={maxPrice}
