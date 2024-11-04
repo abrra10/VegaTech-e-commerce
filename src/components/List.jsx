@@ -3,7 +3,10 @@ import Card from "./Card";
 import useFetch from "../hooks/useFetch";
 
 const List = ({ subCats, maxPrice, sort, catId }) => {
-  // Construct the URL for fetching products
+  if (!catId) {
+    return <div>Error: Category ID is not defined.</div>;
+  }
+
   const url =
     `/products?populate=*&[filters][categories][id]=${catId}` +
     (subCats.length
