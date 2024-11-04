@@ -9,6 +9,8 @@ const List = ({ subCats, maxPrice, sort, catId }) => {
     )}&[filters][price][$lte]=${maxPrice}&sort=price:${sort}`
   );
 
+  console.log("Fetching URL:", url);
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-4">
       {loading
