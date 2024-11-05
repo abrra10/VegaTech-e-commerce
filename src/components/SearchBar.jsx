@@ -26,7 +26,9 @@ const SearchBar = ({ setResults }) => {
 
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:1337/api/products");
+      const response = await axios.get(
+        "https://api.vegatechdz.com/api/products"
+      );
       const products = response.data.data.map((item) => ({
         id: item.id,
         ...item.attributes,
