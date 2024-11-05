@@ -49,7 +49,7 @@ const ProductSection = ({ onScrollToPromotions }) => {
             <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 ">
               {/* Accessories */}
               <Link
-                to="/products/accesories"
+                to="/products/accessories"
                 className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-yellow-500 via-yellow-300 to-yellow-100"></div>
