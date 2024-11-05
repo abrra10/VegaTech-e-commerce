@@ -88,7 +88,9 @@ const SearchBar = ({ setResults }) => {
         />
       )}
       {loading && (
-        <span className="ml-2 text-lg text-royalblue">Loading...</span>
+        <span className="ml-2 font-tertiary text-[16px] text-royalblue">
+          Loading...
+        </span>
       )}
     </div>
   );
