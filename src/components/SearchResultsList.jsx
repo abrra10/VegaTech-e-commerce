@@ -3,7 +3,7 @@ import SearchResult from "./SearchResult";
 const SearchResultsList = ({ results, onSelect }) => {
   return (
     <div
-      className="w-full bg-white z-50 flex flex-col shadow-md rounded-lg mt-6 max-h-[300px] overflow-y-auto absolute"
+      className="w-full bg-white z-50 flex flex-col font-tertiary text-[18px] shadow-md rounded-lg mt-6 max-h-[300px] overflow-y-auto absolute"
       style={{ top: "100%" }} // Ensure the list is positioned properly relative to the input
     >
       {results.length > 0 ? (
