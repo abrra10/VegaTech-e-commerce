@@ -1,35 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import List from "../components/List";
 import useFetch from "../hooks/useFetch";
 
 const Products = () => {
-  const { slug } = useParams(); // Use slug from URL params
+  const { slug } = useParams(); // Use slug directly
   const [maxPrice, setMaxPrice] = useState(1000);
   const [sort, setSort] = useState("asc");
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
-  // Fetch category ID based on the slug
-  const [catId, setCatId] = useState(null);
-  const { data: categories } = useFetch("/categories"); // Fetch all categories to find the ID
-
-  useEffect(() => {
-    if (categories) {
-      const category = categories.find((cat) => cat.attributes.slug === slug);
-      if (category) {
-        setCatId(category.id); // Set the category ID based on slug
-      }
-    }
-  }, [categories, slug]);
-
-  // Fetch subcategories based on the category ID
+  // Fetch subcategories based on the slug
   const {
     data: subCategories,
     loading: loadingSubCats,
     error: errorSubCats,
-  } = useFetch(
-    catId ? `/sub-categories?[filters][categories][id][$eq]=${catId}` : null
-  );
+  } = useFetch(`/sub-categories?[filters][categories][slug][$eq]=${slug}`);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -44,7 +29,6 @@ const Products = () => {
 
   return (
     <div className="flex flex-col md:flex-row gap-4 p-2">
-      {/* Left Sidebar for Subcategories */}
       <div className="flex-1 md:sticky mr-4 top-12">
         <div className="mb-8 p-4">
           <h2 className="text-lg font-tertiary font-bold mb-4 whitespace-nowrap">
@@ -67,7 +51,6 @@ const Products = () => {
           ))}
         </div>
 
-        {/* Sort Options */}
         <div className="mb-8 pl-4">
           <h2 className="text-lg font-tertiary font-bold mb-4">Trier par</h2>
           <div className="flex items-center mb-2">
@@ -99,10 +82,9 @@ const Products = () => {
         </div>
       </div>
 
-      {/* Right Content */}
       <div className="flex-3 sm:pt-8 md:pt-12">
         <List
-          catId={catId}
+          slug={slug} // Pass slug directly to List
           maxPrice={maxPrice}
           sort={sort}
           subCats={selectedSubCats}
