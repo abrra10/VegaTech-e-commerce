@@ -5,7 +5,7 @@ import useFetch from "../hooks/useFetch";
 
 const Products = () => {
   const { slug } = useParams(); // Use slug directly
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(10000000000);
   const [sort, setSort] = useState("asc");
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
