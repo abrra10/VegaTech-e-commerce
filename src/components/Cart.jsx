@@ -70,7 +70,7 @@ const Cart = () => {
             Votre panier est vide. Ajoutez des produits pour continuer.
           </p>
           <Link
-            to="/products"
+            to="/products/laptops"
             className="w-full p-3 flex items-center font-Secondary justify-center bg-gray-400 text-white font-medium mb-5 cursor-not-allowed"
           >
             PASSER À LA CAISSE
