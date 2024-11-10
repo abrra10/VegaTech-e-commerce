@@ -34,6 +34,11 @@
       fbq("init", "592084193153587"); <!-- Your Pixel ID -->
       fbq("track", "PageView");
     </script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Facebook Pixel noscript -->
     <noscript>
       <img
         height="1"
@@ -42,10 +47,8 @@
         src="https://www.facebook.com/tr?id=592084193153587&ev=PageView&noscript=1"
       />
     </noscript>
-    <!-- End Facebook Pixel Code -->
-  </head>
-  <body>
-    <div id="root"></div>
+
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.0.8/dist/countUp.min.js"></script>
   </body>
 </html>
