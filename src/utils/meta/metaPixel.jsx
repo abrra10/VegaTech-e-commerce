@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 const MetaPixel = () => (
   <Helmet>
-    {/* Replace YOUR_PIXEL_CODE with the actual code copied from Facebook */}
+    {/* Facebook Pixel Code */}
     <script>
       {`!function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -13,7 +13,7 @@ const MetaPixel = () => (
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'YOUR_PIXEL_ID');
+      fbq('init', '592084193153587');  // Replace with your Pixel ID
       fbq('track', 'PageView');`}
     </script>
     <noscript>
@@ -21,7 +21,7 @@ const MetaPixel = () => (
         height="1"
         width="1"
         style={{ display: "none" }}
-        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+        src="https://www.facebook.com/tr?id=592084193153587&ev=PageView&noscript=1" // Replace with your Pixel ID
       />
     </noscript>
   </Helmet>
