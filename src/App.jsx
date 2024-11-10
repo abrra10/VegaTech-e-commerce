@@ -26,9 +26,6 @@ export default function App() {
 
   return (
     <>
-      {/* Add MetaPixel component here to ensure it's loaded on all pages */}
-      {/* <MetaPixel /> */}
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
