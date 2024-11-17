@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { removeItem, resetCart } from "../redux/cartReducer";
 import { TrashIcon } from "@heroicons/react/24/outline";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.products);
+  console.log(products);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [showCart, setShowCart] = useState(true);
 
   const totalPrice = () => {
     let total = 0;
@@ -17,15 +16,6 @@ const Cart = () => {
     });
     return total;
   };
-
-  const handleCheckout = () => {
-    setShowCart(false);
-    navigate("/form");
-  };
-
-  if (!showCart) {
-    return null;
-  }
 
   return (
     <div className="fixed right-5 top-20 ml-4 z-[999] bg-white p-5 shadow-lg overflow-y-scroll max-h-[400px]">
@@ -44,6 +34,7 @@ const Cart = () => {
               />
               <div className="flex-1">
                 <h1 className="text-lg font-medium">{item.title}</h1>
+
                 <div className="text-blue-600">
                   {item.quantity} x {item.price} DA
                 </div>
@@ -60,12 +51,12 @@ const Cart = () => {
             <span>{totalPrice()} DA</span>
           </div>
 
-          <button
-            onClick={handleCheckout}
+          <Link
+            to="/form"
             className="w-full p-3 flex items-center font-Secondary justify-center bg-blue-600 text-white font-medium mb-5"
           >
             PASSER À LA CAISSE
-          </button>
+          </Link>
           <span
             className="text-red-500 text-s cursor-pointer mx-auto font-Secondary"
             onClick={() => dispatch(resetCart())}
