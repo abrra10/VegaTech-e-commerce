@@ -11,6 +11,7 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Form() {
   const shippingData = [
@@ -306,6 +307,8 @@ export default function Form() {
     },
   ];
 
+  const navigate = useNavigate();
+
   // Form state management
   const [formData, setFormData] = useState({
     name: "",
@@ -382,6 +385,9 @@ export default function Form() {
           },
         }
       );
+
+      // Navigate to the Thank You page on successful submission
+      navigate("/thank-you");
 
       setMessage("Commande soumise avec succès !");
       setFormData({

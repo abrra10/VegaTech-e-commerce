@@ -6,8 +6,8 @@ import Products from "./pages/Products";
 import Navbar from "./components/Navbar";
 import FooterWithLinks from "./components/Footer";
 import Form from "./pages/Form";
+import ThankYouPage from "./pages/ThankYouPage";
 import useViewportHeight from "./hooks/useViewportHeight";
-import MetaPixel from "./utils/meta/metaPixel";
 
 const Layout = () => {
   return (
@@ -32,6 +32,7 @@ export default function App() {
           <Route path="products/:slug" element={<Products />} />
           <Route path="product/:id" element={<Product />} />
           <Route path="/form" element={<Form />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
         </Route>
       </Routes>
     </>

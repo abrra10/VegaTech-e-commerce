@@ -69,12 +69,12 @@ const Cart = () => {
           <p className="text-lg text-gray-500 mb-5">
             Votre panier est vide. Ajoutez des produits pour continuer.
           </p>
-          <Link
-            to="/products/laptops"
+          <button
+            disabled
             className="w-full p-3 flex items-center font-Secondary justify-center bg-gray-400 text-white font-medium mb-5 cursor-not-allowed"
           >
             PASSER À LA CAISSE
-          </Link>
+          </button>
         </div>
       )}
     </div>
