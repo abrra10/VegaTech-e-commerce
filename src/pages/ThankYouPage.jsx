@@ -3,7 +3,7 @@ import { HiCheckCircle } from "react-icons/hi2";
 
 const ThankYouPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 pt-4 px-8">
+    <div className="flex flex-col items-center justify-center h-screen  px-8">
       {/* Verification Icon */}
       <HiCheckCircle className="text-green-500 text-6xl mb-4" />
 
