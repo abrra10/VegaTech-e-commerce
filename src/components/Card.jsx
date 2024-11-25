@@ -30,17 +30,17 @@ export default function EcommerceCard({ item }) {
         </CardHeader>
         <CardBody>
           <div className="mb-2 flex items-center justify-between">
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-bold">
               {item?.attributes?.title}
             </Typography>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-bold">
               {item?.attributes?.price} DA
             </Typography>
           </div>
           <Typography
             variant="small"
             color="gray"
-            className="font-normal opacity-75"
+            className="font-medium opacity-75 line-clamp-3 min-h-[64px]"
           >
             {item?.attributes?.desc}
           </Typography>

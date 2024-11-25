@@ -84,7 +84,7 @@ const Products = () => {
 
       <div className="flex-3 sm:pt-8 md:pt-12">
         <List
-          slug={slug} // Pass slug directly to List
+          slug={slug}
           maxPrice={maxPrice}
           sort={sort}
           subCats={selectedSubCats}

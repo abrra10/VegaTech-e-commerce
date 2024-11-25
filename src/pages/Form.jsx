@@ -429,7 +429,7 @@ export default function Form() {
   const subtotal = orderPrice + deliveryCost();
 
   return (
-    <div className="flex items-center justify-center min-h-screen py-8">
+    <div className="flex items-center justify-center min-h-screen py-10">
       <Card color="transparent" shadow={false}>
         <Typography
           color="black"

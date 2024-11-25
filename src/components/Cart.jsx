@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { removeItem, resetCart } from "../redux/cartReducer";
 import { TrashIcon } from "@heroicons/react/24/outline";
 
-const Cart = () => {
+const Cart = ({ closeCart }) => {
   const products = useSelector((state) => state.cart.products);
   console.log(products);
   const dispatch = useDispatch();
@@ -15,6 +15,10 @@ const Cart = () => {
       total += item.quantity * item.price;
     });
     return total;
+  };
+
+  const handleCheckout = () => {
+    closeCart();
   };
 
   return (
@@ -54,6 +58,9 @@ const Cart = () => {
           <Link
             to="/form"
             className="w-full p-3 flex items-center font-Secondary justify-center bg-blue-600 text-white font-medium mb-5"
+            onClick={() => {
+              handleCheckout();
+            }}
           >
             PASSER À LA CAISSE
           </Link>

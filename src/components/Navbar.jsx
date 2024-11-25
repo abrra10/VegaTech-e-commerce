@@ -243,7 +243,7 @@ export default function NavbarWithSubmenu() {
             onClick={() => setOpenCart(false)}
           />
           <div className="fixed right-5 top-20 z-[9999] bg-white p-5 shadow-lg">
-            <Cart />
+            <Cart closeCart={() => setOpenCart(false)} />
           </div>
         </>
       )}

@@ -58,7 +58,7 @@ const Product = () => {
             <span className="text-2xl font-medium text-blue-500">
               {data?.attributes?.price} DA
             </span>
-            <p className="text-lg font-light text-justify">
+            <p className="text-lg font-light text-justify whitespace-pre-line">
               {data?.attributes?.desc}
             </p>
             <div className="flex items-center gap-4">
