@@ -8,6 +8,7 @@ import FooterWithLinks from "./components/Footer";
 import Form from "./pages/Form";
 import ThankYouPage from "./pages/ThankYouPage";
 import useViewportHeight from "./hooks/useViewportHeight";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 const Layout = () => {
   return (
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="product/:id" element={<Product />} />
           <Route path="/form" element={<Form />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </>

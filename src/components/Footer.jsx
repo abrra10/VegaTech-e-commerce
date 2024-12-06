@@ -133,7 +133,12 @@ export default function FooterWithLinks() {
             </a>
           </Typography>
           <div className="flex gap-4 text-blue-gray-900 sm:justify-center">
-            {/* Social media icons or other footer content can be added here */}
+            <Link
+              to="/privacy-policy"
+              className="font-tertiary font-bold text-lg text-blue-gray-900 hover:underline"
+            >
+              Privacy Policy
+            </Link>
           </div>
         </div>
       </div>
