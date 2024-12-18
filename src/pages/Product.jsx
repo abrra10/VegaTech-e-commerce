@@ -26,28 +26,38 @@ const Product = () => {
         <>
           <div className="flex-1 flex flex-col gap-4">
             <div className="flex-1">
-              <img
-                src={`${import.meta.env.VITE_UPLOAD_URL}${
-                  data?.attributes[selectedImg]?.data?.attributes?.url
-                }`}
-                alt=""
-                className="w-full lg:h-[650px] md:h-[650px] h-[296px] object-cover"
-              />
+              {data?.attributes[selectedImg]?.data?.attributes?.url ? (
+                <img
+                  src={`${import.meta.env.VITE_UPLOAD_URL}${
+                    data.attributes[selectedImg].data.attributes.url
+                  }`}
+                  alt=""
+                  className="w-full lg:h-[650px] md:h-[650px] h-[296px] object-cover"
+                />
+              ) : (
+                <div className="w-full h-[296px] md:h-[650px] lg:h-[650px] bg-gray-200 flex items-center justify-center">
+                  <span className="text-gray-500">Image non disponible</span>
+                </div>
+              )}
             </div>
 
             <div className="flex gap-4 justify-center mt-4">
-              {["img", "img2", "img3", "img4"].map((imgKey, index) => (
-                <div className="w-24 h-24 relative" key={index}>
-                  <img
-                    src={`${import.meta.env.VITE_UPLOAD_URL}${
-                      data?.attributes[imgKey]?.data?.attributes?.url
-                    }`}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover cursor-pointer"
-                    onClick={() => setSelectedImg(imgKey)}
-                  />
-                </div>
-              ))}
+              {["img", "img2", "img3", "img4"].map((imgKey, index) => {
+                const imageUrl =
+                  data?.attributes[imgKey]?.data?.attributes?.url;
+                return (
+                  imageUrl && (
+                    <div className="w-24 h-24 relative" key={index}>
+                      <img
+                        src={`${import.meta.env.VITE_UPLOAD_URL}${imageUrl}`}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover cursor-pointer"
+                        onClick={() => setSelectedImg(imgKey)}
+                      />
+                    </div>
+                  )
+                );
+              })}
             </div>
           </div>
 
@@ -85,7 +95,7 @@ const Product = () => {
                     title: data.attributes.title,
                     desc: data.attributes.desc,
                     price: data.attributes.price,
-                    img: data.attributes.img.data.attributes.url,
+                    img: data.attributes.img?.data?.attributes?.url || "",
                     quantity,
                   })
                 )

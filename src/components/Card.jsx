@@ -19,7 +19,7 @@ export default function EcommerceCard({ item }) {
             New Arrival
           </span>
         )}
-        <CardHeader shadow={false} floated={false} className="h-96">
+        <CardHeader shadow={false} floated={false} className="h-48 md:h-96">
           <img
             src={`${import.meta.env.VITE_UPLOAD_URL}${
               item?.attributes?.img?.data?.attributes?.url
@@ -29,14 +29,21 @@ export default function EcommerceCard({ item }) {
           />
         </CardHeader>
         <CardBody>
-          <div className="mb-2 flex items-center justify-between">
-            <Typography color="blue-gray" className="font-bold">
+          <div className="mb-2 text-xs md:text-base flex items-center justify-between">
+            <Typography
+              color="blue-gray"
+              className="font-bold w-[150px] truncate" // Set a fixed width and truncate text
+            >
               {item?.attributes?.title}
             </Typography>
-            <Typography color="blue-gray" className="font-bold">
+            <Typography
+              color="blue-gray"
+              className="font-bold w-[100px] text-right" // Set a fixed width and align the price to the right
+            >
               {item?.attributes?.price} DA
             </Typography>
           </div>
+
           <Typography
             variant="small"
             color="gray"
