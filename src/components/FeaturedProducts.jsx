@@ -52,7 +52,8 @@ const FeaturedProducts = forwardRef(({ type }, ref) => {
         >
           {data?.map((item) => (
             <SwiperSlide key={item.id}>
-              <EcommerceCard item={item} />
+              {/* Pass the layout prop as 'featured' */}
+              <EcommerceCard item={item} layout="featured" />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -9,7 +9,11 @@ import {
 import { Link } from "react-router-dom";
 import { TagIcon } from "@heroicons/react/24/outline";
 
-export default function EcommerceCard({ item }) {
+export default function EcommerceCard({ item, layout }) {
+  // Conditional class for CardHeader based on layout
+  const cardHeaderHeight =
+    layout === "featured" ? "h-96 md:h-[400px]" : "h-36 md:h-64"; // Larger height for featured products
+
   return (
     <Link to={`/product/${item.id}`} className="relative block">
       <Card className="w-95 pb-2 relative shadow-none mb-4">
@@ -19,12 +23,12 @@ export default function EcommerceCard({ item }) {
             New Arrival
           </span>
         )}
-        <CardHeader shadow={false} floated={false} className="h-36 md:h-96">
+        <CardHeader shadow={false} floated={false} className={cardHeaderHeight}>
           <img
             src={`${import.meta.env.VITE_UPLOAD_URL}${
               item?.attributes?.img?.data?.attributes?.url
             }`}
-            alt={""}
+            alt={item?.attributes?.title}
             className="h-full w-full object-cover"
           />
         </CardHeader>
