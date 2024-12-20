@@ -12,7 +12,7 @@ import { TagIcon } from "@heroicons/react/24/outline";
 export default function EcommerceCard({ item, layout }) {
   // Conditional class for CardHeader based on layout
   const cardHeaderHeight =
-    layout === "featured" ? "h-96 md:h-[400px]" : "h-36 md:h-64"; // Larger height for featured products
+    layout === "featured" ? "h-96 md:h-[400px]" : "h-40 md:h-80 lg:h-80"; // Larger height for featured products
 
   return (
     <Link to={`/product/${item.id}`} className="relative block">
