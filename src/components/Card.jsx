@@ -12,14 +12,14 @@ import { TagIcon } from "@heroicons/react/24/outline";
 export default function EcommerceCard({ item }) {
   return (
     <Link to={`/product/${item.id}`} className="relative block">
-      <Card className="w-95  pb-2 relative shadow-none mb-4">
+      <Card className="w-95 pb-2 relative shadow-none mb-4">
         {item?.attributes?.isNew && (
           <span className="absolute top-2 left-2 bg-white text-teal-600 px-3 py-1 text-xs font-medium rounded-lg shadow-md">
             <TagIcon className="w-4 h-4 inline mr-1 z-10" />
             New Arrival
           </span>
         )}
-        <CardHeader shadow={false} floated={false} className="h-48 md:h-96">
+        <CardHeader shadow={false} floated={false} className="h-36 md:h-96">
           <img
             src={`${import.meta.env.VITE_UPLOAD_URL}${
               item?.attributes?.img?.data?.attributes?.url
@@ -28,17 +28,18 @@ export default function EcommerceCard({ item }) {
             className="h-full w-full object-cover"
           />
         </CardHeader>
+
         <CardBody>
-          <div className="mb-2 text-xs md:text-base flex items-center justify-between">
+          <div className="mb-2 text-xs md:text-base flex flex-col md:flex-row md:items-center md:justify-between gap-y-1">
             <Typography
               color="blue-gray"
-              className="font-bold w-[150px] truncate" // Set a fixed width and truncate text
+              className="font-bold w-full md:w-[150px] truncate"
             >
               {item?.attributes?.title}
             </Typography>
             <Typography
               color="blue-gray"
-              className="font-bold w-[100px] text-right" // Set a fixed width and align the price to the right
+              className="font-bold w-full md:w-[100px] text-left md:text-right"
             >
               {item?.attributes?.price} DA
             </Typography>
@@ -47,12 +48,13 @@ export default function EcommerceCard({ item }) {
           <Typography
             variant="small"
             color="gray"
-            className="font-medium opacity-75 line-clamp-3 min-h-[64px]"
+            className="font-medium opacity-75 line-clamp-3 truncate md:text-ellipsis min-h-[64px] mb-0"
           >
             {item?.attributes?.desc}
           </Typography>
         </CardBody>
-        <CardFooter className="pt-0">
+
+        <CardFooter className="-mt-2 pt-0">
           <Button
             ripple={false}
             fullWidth={true}
