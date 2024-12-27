@@ -13,7 +13,7 @@ export default function EcommerceCard({ item, layout }) {
   // Conditional class for CardHeader based on layout
   const cardHeaderHeight =
     layout === "featured"
-      ? "h-[360px] md:h-[360px] lg:h-[360px]"
+      ? "h-[370px] md:h-[360px] lg:h-[360px]"
       : "h-40 md:h-[360px] lg:h-[360px]"; // Larger height for featured products
 
   return (
