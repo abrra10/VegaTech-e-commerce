@@ -14,7 +14,7 @@ export default function EcommerceCard({ item, layout }) {
   const cardHeaderHeight =
     layout === "featured"
       ? "h-[370px] md:h-[360px] lg:h-[360px]"
-      : "h-40 md:h-[360px] lg:h-[360px]"; // Larger height for featured products
+      : "h-40 md:h-[370px] lg:h-[370px]"; // Larger height for featured products
 
   return (
     <Link to={`/product/${item.id}`} className="relative block">
