@@ -82,7 +82,7 @@ const Products = () => {
         </div>
       </div>
 
-      <div className="flex-3 sm:pt-8 md:pt-12">
+      <div className="flex-3 pt-2 md:pt-12">
         <List
           slug={slug}
           maxPrice={maxPrice}

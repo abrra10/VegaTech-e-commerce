@@ -18,7 +18,7 @@ export default function EcommerceCard({ item, layout }) {
 
   return (
     <Link to={`/product/${item.id}`} className="relative block">
-      <Card className="w-95 pb-2 relative shadow-none mb-4">
+      <Card className="w-auto pb-2 relative shadow-none mb-2">
         {item?.attributes?.isNew && (
           <span className="absolute top-2 left-2 bg-white text-teal-600 px-3 py-1 text-xs font-medium rounded-lg shadow-md">
             <TagIcon className="w-4 h-4 inline mr-1 z-10" />
@@ -39,13 +39,13 @@ export default function EcommerceCard({ item, layout }) {
           <div className="mb-2 text-xs md:text-base flex flex-col md:flex-row md:items-center md:justify-between gap-y-1">
             <Typography
               color="blue-gray"
-              className="font-bold w-full md:w-[150px] truncate"
+              className="font-bold w-full md:w-[150px] truncate text-center md:text-left"
             >
               {item?.attributes?.title}
             </Typography>
             <Typography
               color="blue-gray"
-              className="font-bold w-full md:w-[100px] text-left md:text-right"
+              className="font-bold w-full md:w-[100px] text-center md:text-right"
             >
               {item?.attributes?.price} DA
             </Typography>
@@ -60,7 +60,7 @@ export default function EcommerceCard({ item, layout }) {
           </Typography>
         </CardBody>
 
-        <CardFooter className="-mt-2 pt-0">
+        <CardFooter className="-mt-14 pt-0 md:-mt-6">
           <Button
             ripple={false}
             fullWidth={true}
